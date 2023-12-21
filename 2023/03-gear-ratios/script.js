@@ -5,7 +5,7 @@ const startTime = performance.now();
 
 const specChar = /[^0-9\r\n.]/;
 
-const input = fs.readFileSync(__dirname + '/input.txt', 'utf8')
+const input = fs.readFileSync(__dirname + '/inputs/input.txt', 'utf8')
 const dataArray = input.split("\r\n");
 
 function findPartSum(stringArray) {

@@ -3,7 +3,7 @@ const performance = require("perf_hooks").performance;
 
 const startTime = performance.now();
 
-const input = fs.readFileSync(__dirname + '/input.txt', 'utf8');
+const input = fs.readFileSync(__dirname + '/inputs/input.txt', 'utf8');
 const dataArray = input.split("\r\n");
 console.log(gameSum(dataArray));
 const time = performance.now() - startTime;

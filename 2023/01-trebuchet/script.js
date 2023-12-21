@@ -48,7 +48,7 @@ const performance = require("perf_hooks").performance;
 
 const startTime = performance.now();
 
-const input = fs.readFileSync(__dirname + '/data.txt', 'utf8');
+const input = fs.readFileSync(__dirname + '/inputs/data.txt', 'utf8');
 const dataArray = input.split("\n");
 
 const part1 = findSum(dataArray, false);
