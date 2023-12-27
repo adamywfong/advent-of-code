@@ -54,7 +54,7 @@ function jokerType(hand) {
   const pairs = cardsInHand.filter((card) => card==2)
   if (Math.max(...cardsInHand) + jokers ==5) return 6;
   if (Math.max(...cardsInHand) + jokers ==4) return 5;
-  if (Math.max(...cardsInHand) + jokers ==3 && pairs.length) return 4;
+  if (Math.max(...cardsInHand) + jokers ==3 && (pairs.length==2 || pairs.length==1 && !jokers)) return 4;
   if (Math.max(...cardsInHand) + jokers ==3) return 3;
   if (pairs.length == 2) return 2;
   if (cardsInHand.includes(2) || jokers) return 1;
