@@ -12,8 +12,10 @@ function winOptions(input) {
     const time = parseInt(times[i]);
     const distance = parseInt(distances[i]);
     for (let j = 1; j <= time / 2; j++) {
+      // j * (t-j) = tj-j^2 
       if (j * time - j * j > distance) {
-        product = product * (time - 2 * j + 1)
+        // number of integers between a and b = b - a + 1
+        product = product * ((time - j) - j + 1)
         break
       }
     }
@@ -24,12 +26,9 @@ function winOptions(input) {
 function winOption(input) {
   const time = parseInt(input.split('\r\n')[0].split(':')[1].replace(/\s+/g, ""))
   const distance = parseInt(input.split('\r\n')[1].split(':')[1].replace(/\s+/g, ""))
+  if (time/2 * time/2 < distance) return 0;
   for (let j = 1; j <= time / 2; j++) {
     if (j * time - j * j > distance) {
-      console.log(j)
-      console.log(time - j)
-      console.log(time)
-      console.log(distance)
       return (time - 2 * j + 1)
     }
   }
